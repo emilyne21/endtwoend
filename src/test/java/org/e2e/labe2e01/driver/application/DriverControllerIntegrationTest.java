@@ -109,7 +109,6 @@ public class DriverControllerIntegrationTest {
 
         Assertions.assertFalse(driverRepository.existsById(savedDriver.getId()));
     }
-
     @Test
     public void testUpdateDriver() throws Exception {
         Driver savedDriver = driverRepository.save(driver);
