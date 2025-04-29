@@ -2,12 +2,16 @@ package org.e2e.labe2e01.review.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.e2e.labe2e01.ride.domain.Ride;
 import org.e2e.labe2e01.user.domain.User;
 
 @NoArgsConstructor
 @Entity
+@Setter
+@Getter
 @Table(name = "review")
 public class Review {
     @Id
