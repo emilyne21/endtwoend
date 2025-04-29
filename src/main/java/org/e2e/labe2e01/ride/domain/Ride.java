@@ -83,4 +83,6 @@ public class Ride {
         return originName != null && destinationName != null && !originName.equals(destinationName);
     }
 
+    public void setDriverId(Long driverId) {
+    }
 }
