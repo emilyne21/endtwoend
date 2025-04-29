@@ -7,6 +7,7 @@ import org.e2e.labe2e01.passenger.domain.Passenger;
 import org.e2e.labe2e01.user.domain.Role;
 import org.e2e.labe2e01.vehicle.domain.Vehicle;
 import org.junit.jupiter.api.Assertions;
+import java.time.ZonedDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
