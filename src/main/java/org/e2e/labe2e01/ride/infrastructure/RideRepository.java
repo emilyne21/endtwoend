@@ -10,4 +10,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface RideRepository extends JpaRepository<Ride,Long> {
 
     Page<Ride> findAllByPassengerIdAndStatus(Long id, Status status, PageRequest of);
+
+    Page<Ride> findByPassengerId(Long passengerId, PageRequest pageRequest);
 }

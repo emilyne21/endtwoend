@@ -3,6 +3,8 @@ package org.e2e.labe2e01.ride.domain;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.e2e.labe2e01.ride.infrastructure.RideRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -35,7 +37,6 @@ public class RideService {
         return null;
     }
 
-
     @Transactional
     public boolean deleteRide(Long id) {
         if (rideRepository.existsById(id)) {
@@ -45,4 +46,18 @@ public class RideService {
         return false;
     }
 
+    @Transactional
+    public Ride assignDriver(Long rideId, Long driverId) {
+        Optional<Ride> optionalRide = rideRepository.findById(rideId);
+        if (optionalRide.isPresent()) {
+            Ride ride = optionalRide.get();
+            ride.setDriverId(driverId);
+            return rideRepository.save(ride);
+        }
+        return null;
+    }
+
+    public Page<Ride> getRidesByPassenger(Long passengerId, PageRequest pageRequest) {
+        return rideRepository.findByPassengerId(passengerId, pageRequest);
+    }
 }
